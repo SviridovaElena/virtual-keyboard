@@ -1,9 +1,11 @@
 @import "null.scss";
 @import "functions.scss";
-$color-key: rgba(197, 133, 243, 0.438);
-$color-keyHover: #6204f8;
-$color-font: rgb(59, 5, 146);
+
+$color-key: rgb(101, 104, 106);
+$color-keyHover: rgb(90, 92, 94);
+$color-font: black;
 $font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
 body {
   font-family: $font-family;
 }
@@ -18,17 +20,18 @@ body {
   flex-direction: column;
   align-items: center;
   row-gap: rem(30);
+
   &__area {
     max-width: rem(1024);
-    padding: rem(10);
+    padding: rem(20);
     width: 100%;
     height: rem(180);
-    border: 1px soli rgb(127 97 247);
+    border: 1px solid #000;
     font-size: em(25);
     resize: none;
   }
   &__keyboard {
-    background: rgba(196, 133, 241, 0.438);
+    background: rgba(121, 114, 126, 0.438);
     max-width: rem(1024);
     width: 100%;
     min-width: rem(951);
@@ -62,20 +65,27 @@ body {
       box-shadow: 0px 0px 7px 5px $color-keyHover;
     }
     &:active {
+      box-shadow: 0px 0px 7px 5px $color-keyHover;
       transform: scale(85%);
     }
     &.active {
       box-shadow: 0px 0px 7px 5px $color-keyHover;
       transform: scale(85%);
     }
+    &.active-up {
+      text-transform: uppercase;
+    }
   }
   &__key-main {
-    &.active {
-      visibility: hidden;
+    &.active-special {
       position: absolute;
       top: rem(3);
       left: rem(5);
       font-size: em(11);
+      text-transform: lowercase;
+    }
+    &.active-Upspecial {
+      text-transform: uppercase;
     }
   }
   &__key-aux {
@@ -83,9 +93,12 @@ body {
     top: rem(3);
     left: rem(5);
     font-size: em(11);
-    &.active {
+    &.active-special {
       position: static;
       font-size: em(16);
+    }
+    &.active-Upspecial {
+      text-transform: lowercase;
     }
   }
 }
